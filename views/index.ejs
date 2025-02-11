@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="motion-safe:scroll-smooth text-[18px] leading-normal">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="OneWest is the premier manufacturer of high-quality flow control and connection products." />
+  <title>OneWest Manufacturing Partners</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      /* Screens */
+      --breakpoint-xs: 320px;
+      --breakpoint-sm: 576px;
+      --breakpoint-md: 768px;
+      --breakpoint-lg: 1024px;
+      --breakpoint-xl: 1200px;
+      --breakpoint-2xl: 1440px;
+      --breakpoint-3xl: 1920px;
+
+      --container-*: initial;
+      --container-width: 1200px;
+
+      --font-sans: "Mulish", sans-serif;
+      --font-primary: var(--font-sans);
+
+      --color-*: initial;
+      --color-transparent: transparent;
+      --color-current: currentColor;
+      --color-white: #fff;
+      --color-black: #000;
+      --color-primary-1: #003750;
+      --color-secondary-1: #ED1C24;
+
+      --ms-ratio:  1.2; /* Minor third */
+      --ms-10: calc(var(--ms-9) / var(--ms-ratio));
+      --ms-9: calc(var(--ms-8) / var(--ms-ratio));
+      --ms-8: calc(var(--ms-7) / var(--ms-ratio));
+      --ms-7: calc(var(--ms-6) / var(--ms-ratio));
+      --ms-6: calc(var(--ms-5) / var(--ms-ratio));
+      --ms-5: calc(var(--ms-4) / var(--ms-ratio));
+      --ms-4: calc(var(--ms-3) / var(--ms-ratio));
+      --ms-3: calc(var(--ms-2) / var(--ms-ratio));
+      --ms-2: calc(var(--ms-1) / var(--ms-ratio));
+      --ms-1: calc(var(--ms0) / var(--ms-ratio));
+      --ms0: 1rem; /** Changes this to adjust the base */
+      --ms1: calc(var(--ms0) * var(--ms-ratio));
+      --ms2: calc(var(--ms1) * var(--ms-ratio));
+      --ms3: calc(var(--ms2) * var(--ms-ratio));
+      --ms4: calc(var(--ms3) * var(--ms-ratio));
+      --ms5: calc(var(--ms4) * var(--ms-ratio));
+      --ms6: calc(var(--ms5) * var(--ms-ratio));
+      --ms7: calc(var(--ms6) * var(--ms-ratio));
+      --ms8: calc(var(--ms7) * var(--ms-ratio));
+      --ms9: calc(var(--ms8) * var(--ms-ratio));
+      --ms10: calc(var(--ms9) * var(--ms-ratio));
+
+      /* Type scale */
+      --text-xs: var(--ms-2);
+      --text-sm: var(--ms-1);
+      --text-base: var(--ms0);
+      --text-lg: var(--ms1);
+      --text-xl: var(--ms2);
+      --text-2xl: var(--ms3);
+      --text-3xl: var(--ms4);
+      --text-4xl: var(--ms5);
+      --text-5xl: var(--ms6);
+      --text-6xl: var(--ms7);
+      --text-7xl: var(--ms8);
+      --text-8xl: var(--ms9);
+      --text-9xl: var(--ms10);
+
+      /* Spacing */
+      --spacing-ms-10: var(--ms-10);
+      --spacing-ms-9: var(--ms-9);
+      --spacing-ms-8: var(--ms-8);
+      --spacing-ms-7: var(--ms-7);
+      --spacing-ms-6: var(--ms-6);
+      --spacing-ms-5: var(--ms-5);
+      --spacing-ms-4: var(--ms-4);
+      --spacing-ms-3: var(--ms-3);
+      --spacing-ms-2: var(--ms-2);
+      --spacing-ms-1: var(--ms-1);
+      --spacing-ms0: var(--ms0);
+      --spacing-ms1: var(--ms1);
+      --spacing-ms2: var(--ms2);
+      --spacing-ms3: var(--ms3);
+      --spacing-ms4: var(--ms4);
+      --spacing-ms5: var(--ms5);
+      --spacing-ms6: var(--ms6);
+      --spacing-ms7: var(--ms7);
+      --spacing-ms8: var(--ms8);
+      --spacing-ms9: var(--ms9);
+      --spacing-ms10: var(--ms10);
+      --spacing-ms11: var(--ms11);
+
+      --spacing-vw: 1vw;
+      --spacing-50vw: calc(var(--spacing-vw) * 50);
+      /* Universal spacing for gaps in grid */
+      --spacing-track: var(--ms2);
+      /* Two gutters at the sides of the main container */
+      --spacing-gutter: calc(var(--spacing-50vw) - min(var(--container-width), 100%) / 2);
+    }
+
+    @utility container {
+      @media (width >= 0) {
+        @apply max-w-none w-auto;
+      }
+    }
+
+    @utility container {
+      @apply grid gap-x-track;
+
+      --container-gutter: 0px;
+      @media (min-width: 360px) {
+        --container-gutter: 15px;
+      }
+
+      /* A grid with two gutters, 12-column sub grid with gap. Each columns is named `c`. */
+      @media (min-width: 768px) {
+        --container-gutter: calc(var(--spacing-gutter) - var(--spacing-track));
+      }
+
+      grid-template-columns:
+        [full-start]
+        /* left gutter */
+        var(--container-gutter-left, var(--container-gutter))
+        /* main area */
+        [main-start]
+          /* with an inner "grid" */
+          var(
+            --grid-template-columns,
+            /* default to 12 equal-size named columns */
+            repeat(
+              var(--column-count, 12),
+              [c] var(--column-width, minmax(0,1fr))
+            )
+          )
+        [main-end]
+        /* right gutter */
+        var(--container-gutter-right, var(--container-gutter))
+      [full-end];
+
+
+      :where(& > *) {
+        grid-column: main;
+      }
+
+      :where(& > .full-page-width) {
+        grid-column: full-start / full-end;
+      }
+    }
+
+    @layer base {
+      p, ul, ol, table {
+        @apply my-ms0;
+      }
+
+      a {
+        @apply underline underline-offset-6;
+        @apply hover:decoration-secondary-1;
+
+        &[target="_blank"] {
+          @apply inline-flex gap-2 items-center;
+          line-height: 39.8px;
+
+          &:after {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M6.25 5C5.56 5 5 5.56 5 6.25v11.5c0 .69.56 1.25 1.25 1.25h11.5c.69 0 1.25-.56 1.25-1.25V14a1 1 0 1 1 2 0v3.75A3.25 3.25 0 0 1 17.75 21H6.25A3.25 3.25 0 0 1 3 17.75V6.25A3.25 3.25 0 0 1 6.25 3H10a1 1 0 1 1 0 2zM14 5a1 1 0 1 1 0-2h6a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V6.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L17.586 5z'/%3E%3C/svg%3E");
+            background-color: currentColor;
+            -webkit-mask-image: var(--svg);
+            mask-image: var(--svg);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+          }
+        }
+      }
+
+      :where(.prose) {
+        & ul, & ol {
+          @apply pl-ms3;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body class="font-primary antialiased bg-white text-primary-1">
+  <header class="container">
+    <img
+      width="1400" height="460"
+      src="images/Header-Background.webp" alt=""
+      class="row-start-1 full-page-width w-full bg-primary-1 max-h-[700px] object-cover object-right-bottom"
+    />
+    <div class="row-start-1 md:col-start-[c_2] md:col-span-9 self-center">
+      <img
+        width="666" height="165"
+        src="images/OneWest_Logo_white_red_rgb 1.svg"
+        alt="OneWest Manufacturing Partners logo"
+      />
+    </div>
+  </header>
+
+  <main class="container gap-y-ms6 py-ms8 md:*:col-start-[c_2] md:*:col-span-9 text-lg prose">
+    <header class="md:col-start-[c_2] md:col-span-9">
+      <h1 class="font-bold text-5xl">Partners in Performance</h1>
+      <p>Formerly Westbrook Energy Group, we are now OneWest—a name that reflects our unity and clarity of purpose as a leading manufacturing partner for industries driving global progress. While our legacy remains foundational, this rebrand embodies our expanded capabilities and commitment to serving the energy, power, infrastructure, aerospace, marine, and defense industries with precision and agility.</p>
+      <p>Our family of brands is equipped with the expertise and vertically integrated services needed to deliver on time, on spec, every time—empowering you to reliably deliver on your promise to customers.</p>
+    </header>
+
+    <section class="md:col-start-[c_2] md:col-span-9">
+      <ul class="grid grid-cols-2 gap-track pl-0 m-0">
+        <li><img src="images/Federal_Flange_Logo.svg" alt="Federal Flange logo" /></li>
+        <li><img src="images/Forged Components_Logo.svg" alt="Forged Components logo" /></li>
+        <li><img src="images/Westbrook_Mfg_Logo_Logo.svg" alt="Westbrook Manufacturing logo" /></li>
+        <li><img src="images/OWMP_EPG_Logo_V.svg" alt="OneWest logo" /></li>
+      </ul>
+    </section>
+
+    <hr class="h-[2px] bg-secondary-1 border-none" />
+
+    <section>
+      <h2 class="text-4xl">OneWest Legacy Websites:</h2>
+      <ul class="md:columns-2 gap-track pl-0">
+        <li>
+          <a href="https://FederalFlange.com" target="_blank">Federal Flange</a>
+        </li>
+        <li>
+          <a href="https://ForgedComponents.com" target="_blank">Forged Components (FCI)</a>
+        </li>
+        <li>
+          <a href="https://WestbrookMFG.com" target="_blank">Westbrook Manufacturing</a>
+        </li>
+        <li>
+          <a href="https://ForgeUSA.com" target="_blank">ForgeUSA</a>
+        </li>
+        <li>
+          <a href="https://WesternOfTexas.com" target="_blank">Western of Texas</a>
+        </li>
+        <li>
+          <a href="https://VikingIronWorks.com" target="_blank">Viking Ironworks</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container text-white bg-primary-1">
+    <div class="md:col-start-[c_2] md:col-span-9 overflow-auto flex flex-wrap gap-x-track items-center">
+      <img
+        width="366" height="91"
+        src="images/OneWest_Logo_white_red_rgb 1.svg"
+        alt="OneWest Manufacturing Partners logo"
+        class="my-ms2 md:mt-ms6"
+      />
+
+      <p class="ml-auto">
+        For more information contact
+        <a href="mailto:info@onewestmfg.com" class="block">info@onewestmfg.com</a>
+      </p>
+
+      <p class="w-full flex gap-track text-sm">
+        © 2024 OneWest. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
