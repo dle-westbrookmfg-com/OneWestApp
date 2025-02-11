@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/8a66f12d-c848-4fc6-a922-debfc0da7c51/resourceGroups/rgWebsitesCentralUS/providers/Microsoft.Web/sites/OneWestApp",
+    "appService.deploySubpath": "."
+}
